@@ -4,17 +4,21 @@ class Character
   def initialize(data)
     @name = data[:name]
     @affiliation = data[:affiliation]
-    @allies = format(data[:allies], 'Allies')
-    @enemies = format(data[:enemies], 'Enemies')
+    @allies = format_list(data[:allies], 'Allies')
+    @enemies = format_list(data[:enemies], 'Enemies')
     @photo = data[:photoUrl]
   end
 
 
   private 
 
-    def format(list, reference)
-      list.reduce("#{reference}: ") do |string, ally|
-        string + ally + ', '
-      end.chomp(', ')
+    def format_list(list, reference)
+      if list.empty? 
+        reference + ': none'
+      else 
+        list.reduce("#{reference}: ") do |string, ref_type|
+          string + ref_type + ', '
+        end.chomp(', ')
+      end
     end
 end
