@@ -11,13 +11,15 @@ RSpec.describe Character do
           "Earth Kingdom"
       ],
       name: "Chan (Fire Nation admiral)",
-      affiliation: "Fire Nation Navy"
+      affiliation: "Fire Nation Navy", 
+      photoUrl: "https://vignette.wikia.nocookie.net/avatar/images/a/a5/Circus_master.png/revision/latest?cb=20130706153819"
   }
     character = Character.new(data)
     expect(character.allies).to eq('Allies: Ozai')
     expect(character.enemies).to eq('Enemies: Earth Kingdom')
     expect(character.name).to eq('Chan (Fire Nation admiral)')
     expect(character.affiliation).to eq('Fire Nation Navy')
+    expect(character.photo).to eq("https://vignette.wikia.nocookie.net/avatar/images/a/a5/Circus_master.png/revision/latest?cb=20130706153819")
   end
 
   # describe 'instance methods' do 
