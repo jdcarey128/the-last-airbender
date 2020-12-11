@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe SearchCharacterService do 
   describe 'nation_characters' do 
-    it 'returns a parsed character array' do 
+    it 'returns a parsed character array', :vcr do 
       result = SearchCharacterService.nation_characters('fire_nation')
   
       expect(result).to be_a(Array)

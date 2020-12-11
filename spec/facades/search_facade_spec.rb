@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe SearchFacade do 
   describe 'nation_characters(nation)' do 
-    it 'returns an array of characters' do 
+    it 'returns an array of characters', :vcr do 
       result = SearchFacade.nation_characters('fire_nation')
 
       expect(result).to be_a(Array)

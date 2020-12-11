@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'As a visitor' do  
   describe 'when I visit the welcome page and select Fire Nation' do 
-    it 'I am redirected to the index where I see the name of a member, their photo, a list of allies and enemies, and affiliation' do
+    it 'I am redirected to the index where I see the name of a member, their photo, a list of allies and enemies, and affiliation', :vcr do
       visit root_path 
       find('#nation').find(:option, 'Fire Nation').select_option 
       click_button 'Search For Members'
