@@ -1,7 +1,7 @@
 <section class='members'>
 
   <% @characters.each do |character| %>
-    <div class='member'>
+    <div class='member' id='character-<%= character.id %>'>
     <h3><%= character.name %></h3>
     <ul>
       <% if character.photo %>

@@ -1,7 +1,13 @@
 class Character 
-  attr_reader :name, :affiliation, :allies, :enemies, :photo
+  attr_reader :id, 
+              :name, 
+              :affiliation, 
+              :allies, 
+              :enemies, 
+              :photo
 
   def initialize(data)
+    @id = data[:_id]
     @name = data[:name]
     @affiliation = data[:affiliation]
     @allies = format_list(data[:allies], 'Allies')
