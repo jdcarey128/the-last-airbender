@@ -8,7 +8,7 @@ RSpec.describe 'As a visitor' do
       click_button 'Search For Members'
       
       expect(current_path).to eq(search_path)
-      expect(page).to have_css('.member', count: 97)
+      expect(page).to have_css('.member', count: 20)
       
       within '#character-5cf5679a915ecad153ab6906' do 
         expect(page).to have_content('Circus master')
