@@ -1,0 +1,17 @@
+<section class='members'>
+
+  <% @characters.each do |character| %>
+    <div class='member'>
+    <h3><%= character.name %></h3>
+    <ul>
+      <% if character.photo %>
+        <img src="<%= character.photo %>" alt="<%= character.name %> photo" style='width:25%'>
+      <% end %>
+      <li><%= character.affiliation %></li>
+      <li><%= character.allies %></li>
+      <li><%= character.enemies %></li>
+    </ul>
+    </div>
+  <% end%>
+
+</section>
